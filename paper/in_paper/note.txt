@@ -1,0 +1,98 @@
+
+
+====== EU =========
+
+len_end_point = 950
+number_point = 550
+
+y_label = "Megabytes"
+
+# LSTM
+# GA
+# ABFO
+# CRO -> OCRO
+# OCRO -> CRO
+# PSO
+# RNN -> MLNN
+# MLNN -> RNN
+
+titles = ["MLNN", "RNN", "LSTM", "GA-MLNN", "PSO-MLNN", "ABFO-MLNN", "CRO-MLNN", "OCRO-MLNN"]    ==>   RNN, MLNN, LSTM, GA, PSO, ABFO, OCRO, CRO
+
+read_filepaths = ["RNN-1HL-sliding_2-net_para_[[5], 1000, 128, 0.0001, ('elu', 'elu'), 'adam', 'mse']",
+                  "MLNN-1H-sliding_2-net_para_{'hidden_sizes': [5], 'epoch': 2000, 'batch_size': 128, 'learning_rate': 0.0001, 'activations': ('elu', 'elu'), 'optimizer': 'adam', 'loss': 'mse'}",
+                  "LSTM-1HL-sliding_2-net_para_[[5], 1000, 128, 0.0001, ('elu', 'elu'), 'adam', 'mse']",
+                  "GA_MLNN-sliding_2-nets_[700, (0, 0), 5, (0.6, 0.4)]-ga_{'epoch': 700, 'pop_size': 200, 'pc': 0.95, 'pm': 0.025}",
+                  "PSO_MLNN-sliding_2-nets_[700, (0, 0), 5, (0.6, 0.4)]-pso_{'epoch': 700, 'pop_size': 200, 'c_minmax': (1.2, 1.2), 'w_minmax': (0.4, 0.9)}",
+                  "ABfoLS_MLNN-sliding_2-nets_[700, (0, 0), 5, (0.6, 0.4)]-abfols_{'epoch': 700, 'pop_size': 200, 'Ci': (0.1, 1e-05), 'Ped': 0.25, 'Ns': 4, 'N_minmax': (3, 40)}",
+                  "OCRO_MLNN-sliding_2-nets_[700, (0, 0), 5, (0.6, 0.4)]-cro_para_{'epoch': 700, 'pop_size': 200, 'po': 0.4, 'Fb': 0.8, 'Fa': 0.1, 'Fd': 0.3, 'Pd': 0.1, 'G': [0.02, 0.2], 'GCR': 0.1, 'k': 3}-ocro_{'restart_count': 55}",
+                  "CRO_MLNN-sliding_2-nets_[700, (0, 0), 5, (0.6, 0.4)]-cro_{'epoch': 700, 'pop_size': 200, 'po': 0.4, 'Fb': 0.9, 'Fa': 0.1, 'Fd': 0.1, 'Pd': 0.1, 'G': [0.02, 0.2], 'GCR': 0.1, 'k': 3}"
+                  ]
+write_filepaths = ["eu_k2_mlnn", "eu_k2_rnn", "eu_k2_lstm", "eu_k2_ga_mlnn", "eu_k2_pso_mlnn", "eu_k2_abfo_mlnn", "eu_k2_cro_mlnn", "eu_k2_ocro_mlnn"]
+
+
+Same with k = 5
+
+
+======= WC =======
+
+    len_end_point = 0
+    number_point = 450
+
+y_label = "Thousands"
+titles = ["MLNN", "RNN", "LSTM", "GA-MLNN", "PSO-MLNN", "ABFO-MLNN", "CRO-MLNN", "OCRO-MLNN"]
+
+read_filepaths = ["ABfoLS_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-abfols_{'epoch': 700, 'pop_size': 200, 'Ci': (0.1, 1e-05), 'Ped': 0.25, 'Ns': 4, 'N_minmax': (3, 40)}",
+                  "LSTM-1HL-sliding_5-net_para_[[5], 1000, 128, 0.0001, ('elu', 'elu'), 'adam', 'mse']",
+                  "RNN-1HL-sliding_5-net_para_[[5], 1000, 128, 0.0001, ('elu', 'elu'), 'adam', 'mse']",
+                  "GA_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-ga_{'epoch': 700, 'pop_size': 200, 'pc': 0.95, 'pm': 0.025}",
+                  "PSO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-pso_{'epoch': 700, 'pop_size': 200, 'c_minmax': (1.2, 1.2), 'w_minmax': (0.4, 0.9)}",
+                  "ABfoLS_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-abfols_{'epoch': 700, 'pop_size': 200, 'Ci': (0.1, 1e-05), 'Ped': 0.25, 'Ns': 4, 'N_minmax': (3, 40)}",
+                  "CRO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-cro_{'epoch': 700, 'pop_size': 200, 'po': 0.4, 'Fb': 0.9, 'Fa': 0.1, 'Fd': 0.1, 'Pd': 0.1, 'G': [0.02, 0.2], 'GCR': 0.1, 'k': 3}",
+                  "OCRO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-cro_para_{'epoch': 700, 'pop_size': 200, 'po': 0.4, 'Fb': 0.8, 'Fa': 0.1, 'Fd': 0.3, 'Pd': 0.1, 'G': [0.02, 0.2], 'GCR': 0.1, 'k': 3}-ocro_{'restart_count': 55}"
+                  ]
+write_filepaths = ["wc_k5_mlnn", "wc_k5_rnn", "wc_k5_lstm", "wc_k5_ga_mlnn", "wc_k5_pso_mlnn", "wc_k5_abfo_mlnn", "wc_k5_cro_mlnn", "wc_k5_ocro_mlnn"]
+
+
+
+
+======= CPU ======
+    len_end_point = 900
+    number_point = 350
+
+os_path = "results/final/multi_cpu/"
+y_label = "CPU usages"
+titles = ["MLNN", "RNN", "LSTM", "GA-MLNN", "PSO-MLNN", "ABFO-MLNN", "CRO-MLNN", "OCRO-MLNN"]
+
+read_filepaths = [ "ABfoLS_MLNN-sliding_10-nets_[700, (0, 0), 5, (0.6, 0.4)]-abfols_{'epoch': 700, 'pop_size': 200, 'Ci': (0.1, 1e-05), 'Ped': 0.25, 'Ns': 4, 'N_minmax': (3, 40)}",
+                  "RNN-1HL-sliding_5-net_para_[[5], 1000, 128, 0.0001, ('elu', 'elu'), 'adam', 'mse']",
+                  "LSTM-1HL-sliding_5-net_para_[[5], 1000, 128, 0.0001, ('elu', 'elu'), 'adam', 'mse']",
+                  "GA_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-ga_{'epoch': 700, 'pop_size': 200, 'pc': 0.95, 'pm': 0.025}",
+                  "PSO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-pso_{'epoch': 700, 'pop_size': 200, 'c_minmax': (1.2, 1.2), 'w_minmax': (0.4, 0.9)}",
+                  "ABfoLS_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-abfols_{'epoch': 700, 'pop_size': 200, 'Ci': (0.1, 1e-05), 'Ped': 0.25, 'Ns': 4, 'N_minmax': (3, 40)}",
+                   "CRO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-cro_{'epoch': 700, 'pop_size': 200, 'po': 0.4, 'Fb': 0.9, 'Fa': 0.1, 'Fd': 0.1, 'Pd': 0.1, 'G': [0.02, 0.2], 'GCR': 0.1, 'k': 3}",
+                   "OCRO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-cro_para_{'epoch': 700, 'pop_size': 200, 'po': 0.4, 'Fb': 0.8, 'Fa': 0.1, 'Fd': 0.3, 'Pd': 0.1, 'G': [0.02, 0.2], 'GCR': 0.1, 'k': 3}-ocro_{'restart_count': 55}"
+                  ]
+write_filepaths = ["cpu_k5_mlnn", "cpu_k5_rnn", "cpu_k5_lstm", "cpu_k5_ga_mlnn", "cpu_k5_pso_mlnn", "cpu_k5_abfo_mlnn", "cpu_k5_cro_mlnn", "cpu_k5_ocro_mlnn"]
+
+
+
+======== RAM ==============
+
+    len_end_point = 280
+    number_point = 190
+
+os_path = "results/final/multi_ram/"
+y_label = "Memory usages"
+titles = ["MLNN", "RNN", "LSTM", "GA-MLNN", "PSO-MLNN", "ABFO-MLNN", "CRO-MLNN", "OCRO-MLNN"]
+
+read_filepaths = [ "MLNN-1H-sliding_5-net_para_{'hidden_sizes': [5], 'epoch': 2000, 'batch_size': 128, 'learning_rate': 0.0001, 'activations': ('elu', 'elu'), 'optimizer': 'adam', 'loss': 'mse'}",
+                   "RNN-1HL-sliding_5-net_para_[[5], 1000, 128, 0.0001, ('elu', 'elu'), 'adam', 'mse']",
+                   "LSTM-1HL-sliding_5-net_para_[[5], 1000, 128, 0.0001, ('elu', 'elu'), 'adam', 'mse']",
+                   "GA_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-ga_{'epoch': 700, 'pop_size': 200, 'pc': 0.95, 'pm': 0.025}",
+                   "PSO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-pso_{'epoch': 700, 'pop_size': 200, 'c_minmax': (1.2, 1.2), 'w_minmax': (0.4, 0.9)}",
+                   "ABfoLS_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-abfols_{'epoch': 700, 'pop_size': 200, 'Ci': (0.1, 1e-05), 'Ped': 0.25, 'Ns': 4, 'N_minmax': (3, 40)}",
+                   "CRO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-cro_{'epoch': 700, 'pop_size': 200, 'po': 0.4, 'Fb': 0.9, 'Fa': 0.1, 'Fd': 0.1, 'Pd': 0.1, 'G': [0.02, 0.2], 'GCR': 0.1, 'k': 3}",
+                   "OCRO_MLNN-sliding_5-nets_[700, (0, 0), 5, (0.6, 0.4)]-cro_para_{'epoch': 700, 'pop_size': 200, 'po': 0.4, 'Fb': 0.8, 'Fa': 0.1, 'Fd': 0.3, 'Pd': 0.1, 'G': [0.02, 0.2], 'GCR': 0.1, 'k': 3}-ocro_{'restart_count': 55}"
+                  ]
+write_filepaths = ["ram_k5_mlnn", "ram_k5_rnn", "ram_k5_lstm", "ram_k5_ga_mlnn", "ram_k5_pso_mlnn", "ram_k5_abfo_mlnn", "ram_k5_cro_mlnn", "ram_k5_ocro_mlnn"]
+
