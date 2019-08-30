@@ -51,13 +51,12 @@ class RootAlgo(object):
                 solution[i] = self.domain_range[1]
 
     def _amend_solution_and_return__(self, solution=None):
-        temp = deepcopy(solution)
         for i in range(self.problem_size):
             if solution[i] < self.domain_range[0]:
                 solution[i] = np.random.uniform()
             if solution[i] > self.domain_range[1]:
                 solution[i] = self.domain_range[1]
-        return temp
+        return solution
 
     def _create_opposition_solution__(self, solution=None, g_best=None):
         opp = [self.domain_range[0] + self.domain_range[1] - g_best[i] + np.random.random() * (g_best[i] - solution[i])
