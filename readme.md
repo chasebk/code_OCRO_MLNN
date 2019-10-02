@@ -1,7 +1,7 @@
 # Efficient Time-series Forecasting using Neural Network and Opposition-based Coral Reefs Optimization
 
 ## Publications
-* If you see my code and data useful and use it, please cites us here
+* If you see our work is useful, please cite us as follows:
     * Thieu Nguyen, Tu Nguyen, Binh Minh Nguyen, Giang Nguyen: Efficient Time-series Forecasting using Neural Network and Opposition-based Coral Reefs Optimization. International Journal of Computational Intelligence Systems, Volume, Issue, pp., ISSN 1875-6891, DOI. Atlantis Press, 2019. SCIE. CC BY 4.0. (accepted)
     
 ## How to read my repository
