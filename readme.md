@@ -1,5 +1,9 @@
 # Efficient Time-series Forecasting using Neural Network and Opposition-based Coral Reefs Optimization
 
+## Publications
+* If you see my code and data useful and use it, please cites us here
+    * Th. Nguyen, T. Nguyen, B.M. Nguyen, G. Nguyen: Efficient Time-series Forecasting using Neural Network and Opposition-based Coral Reefs Optimization. International Journal of Computational Intelligence Systems, Volume, Issue, pp., ISSN 1875-6891, DOI. Atlantis Press, 2019. SCIE. CC BY 4.0. (accepted)
+    
 ## How to read my repository
 1. data: include formatted data
 2. utils: Helped functions such as IO, Draw, Math, Settings (for all model and parameters), Preprocessing...
@@ -57,10 +61,7 @@ multi : input model would be cpu and ram, output model would be cpu and ram
 8. OCRO-MLNN 	=> ocro_mlnn_script.py
 ```
 
-## Publications
-* If you see my code and data useful and use it, please cites us here
-    * Th. Nguyen, T. Nguyen, B.M. Nguyen, G. Nguyen: Efficient Time-series Forecasting using Neural Network and Opposition-based Coral Reefs Optimization. International Journal of Computational Intelligence Systems, Volume, Issue, pp., ISSN 1875-6891, DOI. Atlantis Press, 2019. SCIE. CC BY 4.0. (accepted)
-
+## Notes
 * If you want to know more about code, or want a pdf of both above paper, contact me: nguyenthieu2102@gmail.com
 
 * Take a look at this repos, the simplify code using python (numpy) for all algorithms above. (without neural networks)
