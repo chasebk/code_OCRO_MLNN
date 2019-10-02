@@ -78,20 +78,6 @@ class PsoMlnn(RootHybridMlnn):
         pso = PSO.BasePSO(root_algo_paras=self.root_algo_paras, pso_paras = self.pso_paras)
         self.solution, self.loss_train = pso._train__()
 
-
-class BeeMlnn(RootHybridMlnn):
-    def __init__(self, root_base_paras=None, root_hybrid_paras=None, abc_paras=None):
-        RootHybridMlnn.__init__(self, root_base_paras, root_hybrid_paras)
-        self.abc_paras = abc_paras
-        self.filename = "Bee_MLNN-sliding_{}-nets_{}-bee_{}".format(root_base_paras["sliding"],
-            [root_hybrid_paras["epoch"], root_hybrid_paras["activations"], root_hybrid_paras["hidden_size"],
-             root_hybrid_paras["train_valid_rate"]], abc_paras)
-
-    def _training__(self):
-        md = ABC.BaseABC(root_algo_paras=self.root_algo_paras, abc_paras = self.abc_paras)
-        self.solution, self.loss_train = md._train__()
-
-
 class BfoMlnn(RootHybridMlnn):
     def __init__(self, root_base_paras=None, root_hybrid_paras=None, bfo_paras=None):
         RootHybridMlnn.__init__(self, root_base_paras, root_hybrid_paras)
@@ -116,73 +102,6 @@ class ABfoLSMlnn(RootHybridMlnn):
 
     def _training__(self):
         md = BFO.ABFOLS(root_algo_paras=self.root_algo_paras, abfols_paras=self.abfols_paras)
-        self.solution, self.loss_train = md._train__()
-
-
-class WoaMlnn(RootHybridMlnn):
-    def __init__(self, root_base_paras=None, root_hybrid_paras=None, woa_paras=None):
-        RootHybridMlnn.__init__(self, root_base_paras, root_hybrid_paras)
-        self.woa_paras = woa_paras
-        self.filename = "WOA_MLNN-sliding_{}-nets_{}-whale_{}".format(root_base_paras["sliding"],
-            [root_hybrid_paras["epoch"], root_hybrid_paras["activations"], root_hybrid_paras["hidden_size"],
-             root_hybrid_paras["train_valid_rate"]], woa_paras)
-
-    def _training__(self):
-        md = WOA.BaseWOA(root_algo_paras=self.root_algo_paras, woa_paras = self.woa_paras)
-        self.solution, self.loss_train = md._train__()
-
-
-# ===================== QSO ============================
-
-class QsoMlnn(RootHybridMlnn):
-    def __init__(self, root_base_paras=None, root_hybrid_paras=None, qso_paras=None):
-        RootHybridMlnn.__init__(self, root_base_paras, root_hybrid_paras)
-        self.qso_paras = qso_paras
-        self.filename = "QSO_MLNN-sliding_{}-nets_{}-whale_{}".format(root_base_paras["sliding"],
-            [root_hybrid_paras["epoch"], root_hybrid_paras["activations"], root_hybrid_paras["hidden_size"],
-             root_hybrid_paras["train_valid_rate"]], qso_paras)
-
-    def _training__(self):
-        md = QSO.BaseQSO(root_algo_paras=self.root_algo_paras, qso_paras = self.qso_paras)
-        self.solution, self.loss_train = md._train__()
-
-
-class OQsoMlnn(RootHybridMlnn):
-    def __init__(self, root_base_paras=None, root_hybrid_paras=None, qso_paras=None):
-        RootHybridMlnn.__init__(self, root_base_paras, root_hybrid_paras)
-        self.qso_paras = qso_paras
-        self.filename = "OppQSO_MLNN-sliding_{}-nets_{}-whale_{}".format(root_base_paras["sliding"],
-            [root_hybrid_paras["epoch"], root_hybrid_paras["activations"], root_hybrid_paras["hidden_size"],
-             root_hybrid_paras["train_valid_rate"]], qso_paras)
-
-    def _training__(self):
-        md = QSO.OppQSO(root_algo_paras=self.root_algo_paras, qso_paras = self.qso_paras)
-        self.solution, self.loss_train = md._train__()
-
-
-class LQsoMlnn(RootHybridMlnn):
-    def __init__(self, root_base_paras=None, root_hybrid_paras=None, qso_paras=None):
-        RootHybridMlnn.__init__(self, root_base_paras, root_hybrid_paras)
-        self.qso_paras = qso_paras
-        self.filename = "LevyQSO_MLNN-sliding_{}-nets_{}-whale_{}".format(root_base_paras["sliding"],
-            [root_hybrid_paras["epoch"], root_hybrid_paras["activations"], root_hybrid_paras["hidden_size"],
-             root_hybrid_paras["train_valid_rate"]], qso_paras)
-
-    def _training__(self):
-        md = QSO.LevyQSO(root_algo_paras=self.root_algo_paras, qso_paras = self.qso_paras)
-        self.solution, self.loss_train = md._train__()
-
-
-class IQsoMlnn(RootHybridMlnn):
-    def __init__(self, root_base_paras=None, root_hybrid_paras=None, qso_paras=None):
-        RootHybridMlnn.__init__(self, root_base_paras, root_hybrid_paras)
-        self.qso_paras = qso_paras
-        self.filename = "LevyOppQSO_MLNN-sliding_{}-nets_{}-whale_{}".format(root_base_paras["sliding"],
-            [root_hybrid_paras["epoch"], root_hybrid_paras["activations"], root_hybrid_paras["hidden_size"],
-             root_hybrid_paras["train_valid_rate"]], qso_paras)
-
-    def _training__(self):
-        md = QSO.LevyOppQSO(root_algo_paras=self.root_algo_paras, qso_paras = self.qso_paras)
         self.solution, self.loss_train = md._train__()
 
 

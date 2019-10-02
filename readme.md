@@ -1,90 +1,73 @@
-## Temp
-1. Accuracy
-```code
-    ELM, GA-ELM, PSO-ELM, WOA-ELM, MLNN, RNN, LSTM, GRU - done
-```
+# Efficient Time-series Forecasting using Neural Network and Opposition-based Coral Reefs Optimization
+
+## How to read my repository
+1. data: include formatted data
+2. utils: Helped functions such as IO, Draw, Math, Settings (for all model and parameters), Preprocessing...
+3. paper: include 2 main folders: 
+    * results: forecasting results of all models (3 folders inside) 
+        * final: final forecasting results (runs on server)
+        * stability: final stability results(runs on server)
+4. model: (4 folders) 
+    * root: (want to understand the code, read this classes first)
+        * root_base.py: root for all models (traditional, hybrid and variants...) 
+        * root_algo.py: root for all optimization algorithms
+        * traditional: root for all traditional models (inherit: root_base)
+        * hybrid: root for all hybrid models (inherit: root_base)
+    * optimizer: (this classes inherit: root_algo.py)
+        * evolutionary: include algorithms related to evolution algorithm such as GA, DE,..
+        * swarm: include algorithms related to swarm optimization such as PSO, CSO, BFO, ...
+    * main: (final models)
+        * this classes will use those optimizer above and those root (traditional, hybrid) above 
+        * the running files (outside with the orginial folder: cro_mlnn_script.py, ...) will call this classes
+        * the traditional models will use single file such as: traditional_ffnn, traditional_rnn,...
+        * the hybrid models will use 2 files, example: hybrid_ffnn.py and GA.py (optimizer files)
+
     
-2. Stability
+## Notes
+1. To improve the speed of Pycharm when opening (because Pycharm will indexing when opening), you should right click to 
+paper and data folder => Mark Directory As  => Excluded
+
+2. When runs models, you should copy the running files to the original folder (prediction_flnn folder)
+
+3. Make sure you active the environment before run the running files 
+* For terminal on linux
 ```code
-    ELM, GA-ELM, PSO-ELM, WOA-ELM,  MLNN, RNN, LSTM, GRU  - done
+    source activate environment_name 
+    python running_file.py (python cro_mlnn_script.py)
+```
+4. In paper/results/final model includes folder's name represent the data such as 
+```code
+cpu: input model would be cpu, output model would be cpu 
+ram: same as cpu
+multi_cpu : input model would be cpu and ram, output model would be cpu 
+multi_ram : input model would be cpu and ram, output model would be ram
+multi : input model would be cpu and ram, output model would be cpu and ram
+```
+5. Take a look at project_structure.md file.  Describe how the project was built.
+
+## Model
+```code
+1. MLNN (1 HL) 	=> mlnn1hl_script.py
+2. RNN (1HL)		=> rnn1hl_script.py
+3. LSTM (1HL)	=> lstm1hl_script.py
+4. GA-MLNN 		=> ga_mlnn_script.py
+5. PSO-MLNN 	=> pso_mlnn_script.py
+6. ABFO-MLNN 	=> abfo_mlnn_script.py
+7. CRO-MLNN 	=> cro_mlnn_script.py
+8. OCRO-MLNN 	=> ocro_mlnn_script.py
 ```
 
+## Publications
+* If you see my code and data useful and use it, please cites us here
+    * Th. Nguyen, T. Nguyen, B.M. Nguyen, G. Nguyen: Efficient Time-series Forecasting using Neural Network and Opposition-based Coral Reefs Optimization. International Journal of Computational Intelligence Systems, Volume, Issue, pp., ISSN 1875-6891, DOI. Atlantis Press, 2019. SCIE. CC BY 4.0. (accepted)
 
-# Links:
-```code 
-1. git: https://github.com/thieunguyen5991/woa_elm
-2. paper: https://bitbucket.org/nguyenthieu2102/paper_whale/
-```
+* If you want to know more about code, or want a pdf of both above paper, contact me: nguyenthieu2102@gmail.com
 
-# Model comparison
-1. ELM
-2. RNN
-3. LSTM
-4. GA-ELM
-5. PSO-ELM
-6. WOA-ELM
+* Take a look at this repos, the simplify code using python (numpy) for all algorithms above. (without neural networks)
+	
+	* https://github.com/thieunguyen5991/metaheuristics
 
-## ELM characteristics
-```code 
-1. ELM là thuật toán không phải mô hình mạng, áp dụng cho mạng single-hidden-layer feed-forward neural network 
-2. Input weights và Hidden Biases được random ngẫu nhiên, còn Output weights và output bias được tính dựa vào 
-phép nhân ma trận nghịch đảo.
-3. ELM chạy rất nhanh, kết quả tốt, có khả năng tổng quát tốt 
-4. ELM có nhược điểm là phụ thuộc vào việc random, yêu cầu cần nhiều hidden unit trong tầng ẩn để tổng quát tốt.
-5. Tuy nhiên yếu tố random trong ELM là không nhiều, do vậy thường khi chạy ELM cho ra cùng 1 kết quả, tính stable rất cao. 
-```
+## License
 
-## ELM improvements
-```code 
-1. Sử dụng các giải thuật để tối ưu Input weights và Hidden biases 
-2. Do đặc tính chạy nhanh của ELM nên trong paper không so sánh được về mặt time (vì các model khác đều chậm hơn ELM)
-3. Do đặc tính stable của ELM nên khi so sánh tính stability nên loại bỏ ELM vì biết chắc nó có tính stable đến 99% 
-```
-
-
-# Project structure
-1. General view class
-![Our model](paper/images/code/all_code_wrapper.png)
-
-2. Details view class
-* root files
-
-![](paper/images/code/root_ann.png) ![](paper/images/code/root_rnn.png) ![](paper/images/code/root_hybrid_mlnn.png)
-
-* algorithm files
-
-![](paper/images/code/GA.png) ![](paper/images/code/DE.png) ![](paper/images/code/PSO.png)
-
-![](paper/images/code/CRO.png) ![](paper/images/code/BFO.png)
-
-* main files
-
-![Our model](paper/images/code/hybrid_mlnn.png)
-
-![Our model](paper/images/code/neural_network.png)
-
-
-
-
-## Server Errors: Check lỗi multi-threading giữa numpy và openBlas
-Ta phải check xem core-backend của numpy nó đang dùng thư viện hỗ trợ nào : blas hay mkl
-    python
-    import numpy
-    numpy.__config__.show()
-    
-https://stackoverflow.com/questions/17053671/python-how-do-you-stop-numpy-from-multithreading
-https://stackoverflow.com/questions/19257070/unintented-multithreading-in-python-scikit-learn
-
----> Để chặn numpy không chạy multi-thread sẽ tốn thời gian trao đổi:
-Thêm vào file ~/.bashrc hoặc ~/.bash_profile dòng sau:
-    export OPENBLAS_NUM_THREADS=1   (Nếu dùng OpenBlas)
-    export MKL_NUM_THREADS=1        (Nếu dùng MKL)
-
-    export OPENBLAS_NUM_THREADS=1  
-    export MKL_NUM_THREADS=1       
-
-## Neu bi loi: Cannot share object lien quan den matplotlib tren server thi sua nhu sau:
-```
-    sudo apt update
-    sudo apt install libgl1-mesa-glx
-```
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+  

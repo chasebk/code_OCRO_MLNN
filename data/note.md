@@ -1,6 +1,6 @@
-### Dataset 
+# Dataset 
 
-#### Computing 
+### Computing 
 
 1. Internet traffic data (in bits) from a private ISP with centres 
     
@@ -30,11 +30,6 @@ The data corresponds to a transatlantic link and was collected from 06:57 hours 
 2. UK
     https://datamarket.com/data/set/232g/internet-traffic-data-in-bits-from-an-isp-aggregated-traffic-in-the-united-kingdom-academic-network-backbone-it-was-collected-between-19-november-2004-at-0930-hours-and-27-january-2005-at-1111-hours-data-collected-at-five-minute-intervals#!ds=232g
     
-### Workload 
-1. http://gwa.ewi.tudelft.nl/datasets/gwa-t-10-sharcnet/report/
-2. http://gwa.ewi.tudelft.nl/datasets/gwa-t-5-ngs/report/      (failed)
-3. http://gwa.ewi.tudelft.nl/datasets/gwa-t-1-das2/report/
-4. http://gwa.ewi.tudelft.nl/datasets/gwa-t-3-nordugrid/report/
 
 
 
