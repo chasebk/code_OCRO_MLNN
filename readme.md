@@ -61,7 +61,7 @@ multi : input model would be cpu and ram, output model would be cpu and ram
 8. OCRO-MLNN 	=> ocro_mlnn_script.py
 ```
 
-## Notes
+## Contact
 * If you want to know more about code, or want a pdf of both above paper, contact me: nguyenthieu2102@gmail.com
 
 * Take a look at this repos, the simplify code using python (numpy) for all algorithms above. (without neural networks)
