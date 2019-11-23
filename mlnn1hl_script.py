@@ -11,7 +11,7 @@ run_times = None
 
 if test_type == "normal":           ### For normal test
     run_times = 1
-    pathsave = "paper/results/test/"
+    pathsave = "paper/results/final/"
     all_model_file_name = "nn_log_models"
 elif test_type == "stability":      ### For stability test (n times run with the same parameters)
     run_times = 15
