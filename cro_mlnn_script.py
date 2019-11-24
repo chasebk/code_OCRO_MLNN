@@ -33,7 +33,7 @@ def train_model(item):
         "path_save_result": pathsave + requirement_variables[4],
         "test_type": test_type,
         "draw": True,
-        "print_train": 0  # 0: nothing, 1 : full detail, 2: short version
+        "print_train": 1  # 0: nothing, 1 : full detail, 2: short version
     }
     root_hybrid_paras = {
         "hidden_size": item["hidden_size"], "activations": item["activations"], "epoch": item["epoch"],

@@ -1,6 +1,5 @@
-from model.optimizer.swarm import BFO, ABC, PSO, WOA
+from model.optimizer.swarm import BFO, PSO
 from model.optimizer.evolutionary import GA, DE, CRO
-from model.optimizer.physics import QSO
 from model.root.hybrid.root_hybrid_mlnn import RootHybridMlnn
 
 

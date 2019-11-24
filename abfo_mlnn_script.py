@@ -32,14 +32,14 @@ def train_model(item):
         "path_save_result": pathsave + requirement_variables[4],
         "test_type": test_type,
         "draw": True,
-        "print_train": 0  # 0: nothing, 1 : full detail, 2: short version
+        "print_train": 1  # 0: nothing, 1 : full detail, 2: short version
     }
     root_hybrid_paras = {
         "hidden_size": item["hidden_size"], "activations": item["activations"], "epoch": item["epoch"],
         "train_valid_rate": item["train_valid_rate"], "domain_range": item["domain_range"]
     }
     abfols_paras = {
-        "pop_size": item["pop_size"], "Ci": item["Ci"], "Ped": item["Ped"], "Ns": item["Ns"],
+        "epoch": item["epoch"], "pop_size": item["pop_size"], "Ci": item["Ci"], "Ped": item["Ped"], "Ns": item["Ns"],
         "N_minmax": item["N_minmax"]
     }
     md = ABfoLSMlnn(root_base_paras=root_base_paras, root_hybrid_paras=root_hybrid_paras, abfols_paras=abfols_paras)
