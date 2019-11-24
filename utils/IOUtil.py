@@ -8,6 +8,7 @@ Created on Sun Apr 15 09:49:35 2018
 import numpy as np
 import pandas as pd
 import csv
+import os
 
 def save_prediction_to_csv(y_test=None, y_pred=None, filename=None, pathsave=None):
     t1 = np.concatenate((y_test, y_pred), axis=1)
@@ -19,6 +20,9 @@ def save_loss_train_to_csv(error=None, filename=None, pathsave=None):
     return None
 
 def save_all_models_to_csv(item=None, log_filename=None, pathsave=None):
+    directory = os.getcwd() + "/" + pathsave
+    if not os.path.exists(directory):
+        os.makedirs(directory)
     with open(pathsave + log_filename + ".csv", "a+") as file:
         wr = csv.writer(file, dialect='excel')
         wr.writerow(item)
