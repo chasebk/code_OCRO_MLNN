@@ -1,7 +1,17 @@
+#!/usr/bin/env python
+# ------------------------------------------------------------------------------------------------------%
+# Created by "Thieu Nguyen" at 00:51, 29/03/2020                                                        %
+#                                                                                                       %
+#       Email:      nguyenthieu2102@gmail.com                                                           %
+#       Homepage:   https://www.researchgate.net/profile/Thieu_Nguyen6                                  %
+#       Github:     https://github.com/thieunguyen5991                                                  %
+# -------------------------------------------------------------------------------------------------------%
+
 from sklearn.metrics import explained_variance_score, mean_absolute_error, mean_squared_error, mean_squared_log_error, median_absolute_error, r2_score
 import numpy as np
 
-class MeasureTimeSeries(object):
+
+class MeasureTimeSeries:
     def __init__(self, y_true, y_pred, multi_output=None, number_rounding=3):
         """
         :param y_true:
