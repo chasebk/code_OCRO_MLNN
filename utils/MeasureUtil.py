@@ -57,7 +57,7 @@ class MeasureTimeSeries(object):
         temp = np.mean(2*np.abs(self.y_pred - self.y_true) / (np.abs(self.y_true) + np.abs(self.y_pred)), axis=0) * 100
         self.score_smape = np.round(temp, self.number_rounding)
 
-    def fit(self):
+    def _fit__(self):
         self.explained_variance_score()
         self.mean_absolute_error()
         self.mean_squared_error()
