@@ -14,7 +14,7 @@ from model.root.root_base import RootBase
 import utils.MathUtil as my_math
 
 
-class RootHybridMlp(RootBase):
+class RootHybridMlnn(RootBase):
     """
         This is root of all hybrid multi-layer neural network (meta-heuristics + MLNN)
     """
