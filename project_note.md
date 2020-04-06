@@ -11,21 +11,21 @@
 
 # Project structure
 1. General view class
-![Our model](paper/images/code/all_code_wrapper.png)
+![Our model](history/images/code/all_code_wrapper.png)
 
 2. Details view class
 * root files
 
-![](paper/images/code/root_ann.png) ![](paper/images/code/root_rnn.png) ![](paper/images/code/root_hybrid_mlnn.png)
+![](history/images/code/root_ann.png) ![](history/images/code/root_rnn.png) ![](history/images/code/root_hybrid_mlnn.png)
 
 * algorithm files
 
-![](paper/images/code/GA.png) ![](paper/images/code/DE.png) ![](paper/images/code/PSO.png)
+![](history/images/code/GA.png) ![](history/images/code/DE.png) ![](history/images/code/PSO.png)
 
-![](paper/images/code/CRO.png) ![](paper/images/code/BFO.png)
+![](history/images/code/CRO.png) ![](history/images/code/BFO.png)
 
 * main files
 
-![Our model](paper/images/code/hybrid_mlnn.png)
+![Our model](history/images/code/hybrid_mlnn.png)
 
-![Our model](paper/images/code/neural_network.png)
+![Our model](history/images/code/neural_network.png)
