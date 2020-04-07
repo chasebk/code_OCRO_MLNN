@@ -35,7 +35,7 @@ def train_model(item):
         "draw": SP_DRAW,
         "print_train": SP_PRINT_TRAIN,  # 0: nothing, 1 : full detail, 2: short version
     }
-    paras_name = "hs_{}-ep_{}-act_{}-Ci_{}-Ped_{}-Ns_{}-N_minmax_{}".format(item["hidden_size"], item["epoch"], item["activation"],
+    paras_name = "hs_{}-ep_{}-act_{}-ps_{}-Ci_{}-Ped_{}-Ns_{}-N_minmax_{}".format(item["hidden_size"], item["epoch"], item["activation"], item["pop_size"],
                                                                             item["Ci"], item["Ped"], item["Ns"], item["N_minmax"])
     root_hybrid_paras = {
         "hidden_size": item["hidden_size"], "activations": item["activations"], "epoch": item["epoch"], "domain_range": item["domain_range"],
