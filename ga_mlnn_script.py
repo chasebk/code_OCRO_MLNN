@@ -24,7 +24,7 @@ def train_model(item):
     root_base_paras = {
         "dataset": dataset,
         "feature_size": feature_size,
-        "data_idx": SP_DATA_SPLIT_INDEX_2,
+        "data_idx": SP_DATA_SPLIT_INDEX,
         "sliding": item["sliding"],
         "multi_output": multi_output,
         "output_idx": output_index,
@@ -35,7 +35,8 @@ def train_model(item):
         "draw": SP_DRAW,
         "print_train": SP_PRINT_TRAIN,  # 0: nothing, 1 : full detail, 2: short version
     }
-    paras_name = "hs_{}-ep_{}-act_{}-pc_{}-pm_{}".format(item["hidden_size"], item["epoch"], item["activations"], item["pc"], item["pm"])
+    paras_name = "hs_{}-ep_{}-act_{}-ps_{}-pc_{}-pm_{}".format(item["hidden_size"], item["epoch"], item["activations"], item["pop_size"], item["pc"],
+                                                               item["pm"])
     root_hybrid_paras = {
         "hidden_size": item["hidden_size"], "activations": item["activations"], "epoch": item["epoch"], "domain_range": item["domain_range"],
         "paras_name": paras_name
